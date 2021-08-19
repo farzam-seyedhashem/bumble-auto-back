@@ -3,6 +3,7 @@ import Role from '../models/role_model';
 
 const data = [
     {
+        _id:'6017ac1c0d1e621ef92b656e',
         name: 'admin',
         accessibility: {
             "service": {"get": true, "show": true, "post": true, "put": true, "delete": true},

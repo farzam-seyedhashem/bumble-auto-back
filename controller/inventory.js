@@ -1,23 +1,22 @@
-import BlogModel from '../models/blog_model';
+import InventoryModel from '../models/inventory';
 
 // Display a listing of the resource.
 exports.index = function (req, res) {
     const resPerPage = parseInt(req.query.per_page) || 12;
     const page = parseInt(req.query.page) || 1;
-    const category = req.query.category || "all";
     const response = {
-        "model": BlogModel.info(),
+        "model": InventoryModel.info(),
         "currentPage": page,
         "data": [],
         "perPage": resPerPage,
         "lastPage": false,
-        "lastPageIndex":1,
+        "lastPageIndex": 1,
     }
 
-    BlogModel.find().skip((resPerPage * page) - resPerPage)
-        .limit(resPerPage).sort({'createdAt': -1}).populate('lang').populate('categories').populate('thumbnail').exec(function (err, docs) {
-        BlogModel.count().exec(function(err, count) {
-            response.lastPageIndex = count/resPerPage
+    InventoryModel.find().skip((resPerPage * page) - resPerPage)
+        .limit(resPerPage).sort({'createdAt': -1}).exec(function (err, docs) {
+        InventoryModel.count().exec(function (err, count) {
+            response.lastPageIndex = count / resPerPage
             if (count <= (resPerPage * page)) {
                 response.lastPage = true
             }
@@ -25,7 +24,7 @@ exports.index = function (req, res) {
             res.send(response);
         })
     });
-    // BlogModel.find(regexQuery, function (err, docs) {
+    // InventoryModel.find(regexQuery, function (err, docs) {
     //
     //     response.data = docs;
     //     res.send(response);
@@ -39,18 +38,39 @@ exports.create = function (req, res) {
     res.send('NOT IMPLEMENTED: Book list');
 };
 
+// Store a newly created resource in storage from CSV.
+exports.storeRow = function (row) {
+    row.slug = row.VIN
+    row.photoURLS = row.Photo_URLs.split(',')
+    InventoryModel.remove({}, function (err, updateObj) {
+        if (err)
+            console.log("err")
+        else
+        {
+            new InventoryModel(row).save(function (err) {
+                if (err) {
+                    console.log(err)
+                } else {
+                    console.log('down')
+                }
+            });
+        }
+    });
+
+};
+
 // Store a newly created resource in storage.
 exports.store = function (req, res) {
     var body = req.body;
     // console.log(body);
 
-    var newNews = new BlogModel({
-        title:body.title,
-        slug:body.slug || body.title,
-        content:body.content,
+    var newNews = new InventoryModel({
+        Phone: body.phone,
+        slug: body.slug,
+        content: body.content,
         thumbnail: body.thumbnail,
         categories: body.categories,
-        lang:body.lang,
+        lang: body.lang,
     });
     newNews.save(function (err) {
         if (err) {
@@ -63,7 +83,7 @@ exports.store = function (req, res) {
 
 // Display the specified resource.
 exports.show = function (req, res) {
-    BlogModel.find({slug: req.params.slug}).populate('categories').populate('thumbnail').exec(function (err, docs) {
+    InventoryModel.find({slug: req.params.slug}).populate('categories').populate('thumbnail').exec(function (err, docs) {
         console.log(docs[0])
         res.send(docs[0])
     });
@@ -77,8 +97,8 @@ exports.edit = function (req, res) {
 // Update the specified resource in storage.
 exports.update = function (req, res) {
     var body = req.body;
-    // let doc = BlogModel.findOneAndUpdate({_id: req.params.id}, body);
-    BlogModel.findOneAndUpdate({_id: req.params.id}, body, {new: true}, function (err, response) {
+    // let doc = InventoryModel.findOneAndUpdate({_id: req.params.id}, body);
+    InventoryModel.findOneAndUpdate({_id: req.params.id}, body, {new: true}, function (err, response) {
         res.send(response)
     });
 
@@ -86,7 +106,7 @@ exports.update = function (req, res) {
 
 // Remove the specified resource from storage.
 exports.destroy = function (req, res) {
-    BlogModel.remove({_id: req.params.id}, function (err, updateObj) {
+    InventoryModel.remove({_id: req.params.id}, function (err, updateObj) {
         res.send(updateObj)
     });
 };

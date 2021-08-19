@@ -16,12 +16,13 @@ exports.index = function (req, res) {
     }
 
     SliderModel.find().skip((resPerPage * page) - resPerPage)
-        .limit(resPerPage).sort({'createdAt': -1}).populate('lang').populate('thumbnail').exec(function (err, docs) {
+        .limit(resPerPage).sort({'createdAt': -1}).populate('thumbnail').exec(function (err, docs) {
         SliderModel.count().exec(function(err, count) {
             response.lastPageIndex = count/resPerPage
             if (count <= (resPerPage * page)) {
                 response.lastPage = true
             }
+
             response.data = docs;
             res.send(response);
         })
@@ -46,10 +47,10 @@ exports.store = function (req, res) {
     // console.log(body);
     var newSlider = new SliderModel({
         title:body.title,
-        buttonText:body.buttonText,
+        // buttonText:body.buttonText,
         content:body.content,
         thumbnail: body.thumbnail,
-        lang: body.lang,
+        // lang: body.lang,
         // like: body.like,
     });
     newSlider.save(function (err) {

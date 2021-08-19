@@ -9,5 +9,5 @@ import Language from '../models/language'
 import UserModel from '../models/language'
 exports.index = function (req, res) {
    res.status(200)
-    res.send({"models":{"gallery":Gallery.info(),"user":UserModel.info(),"slider":Slider.info(),"language":Language.info(),"request":RequestModel.info(),"blog":BlogModel.info(),"blog-category":BlogCategoryModel.info(),"service":ServiceModel.info()}});
+    res.send({"default-lang":"en","models":{"gallery":Gallery.info(),"user":UserModel.info(),"slider":Slider.info(),"language":Language.info(),"request":RequestModel.info(),"blog":BlogModel.info(),"blog-category":BlogCategoryModel.info(),"service":ServiceModel.info()}});
 };

@@ -1,7 +1,7 @@
 import express from 'express'
 import sliderController from '../controller/slider_controller'
 import AuthenticationMiddleware, {checkToken} from '../middleware/authentication_middleware'
-import NewsController from "../controller/blog_controller";
+// import NewsController from "../controller/blog_controller";
 import permit from "../middleware/authorization_middleware";
 const router = express.Router();
 

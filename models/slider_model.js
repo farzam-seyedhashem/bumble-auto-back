@@ -24,13 +24,13 @@ const info = {
                     columnMobile: '12',
                     type: 'text-field',
                 },
-                buttonText: {
-                    title: 'عنوان دکمه',
-                    columnDesktop: '6',
-                    columnMobile: '12',
-                    isShowInTable: true,
-                    type: 'text-field',
-                },
+                // buttonText: {
+                //     title: 'عنوان دکمه',
+                //     columnDesktop: '6',
+                //     columnMobile: '12',
+                //     isShowInTable: true,
+                //     type: 'text-field',
+                // },
                 content: {
                     title: 'متن',
                     columnDesktop: '12',
@@ -39,21 +39,21 @@ const info = {
                 },
             }
         },
-        {
-            fieldTitle: 'انتخاب زبان',
-            fields: {
-                lang: {
-                    title: 'زبان',
-                    type: 'select',
-                    isMultiple: false,
-                    route: 'language',
-                    columnDesktop: '12',
-                    columnMobile: '12',
-                    key: 'title',
-                    isShowInTable: false,
-                },
-            }
-        }
+        // {
+        //     fieldTitle: 'انتخاب زبان',
+        //     fields: {
+        //         lang: {
+        //             title: 'زبان',
+        //             type: 'select',
+        //             isMultiple: false,
+        //             route: 'language',
+        //             columnDesktop: '12',
+        //             columnMobile: '12',
+        //             key: 'title',
+        //             isShowInTable: false,
+        //         },
+        //     }
+        // }
     ]
 }
 var SliderSchema = new Schema({
@@ -66,18 +66,18 @@ var SliderSchema = new Schema({
         ref: 'Image',
         required: true,
     },
-    buttonText: {
-        type: String,
-        required: true,
-    },
+    // buttonText: {
+    //     type: String,
+    //     required: true,
+    // },
     content: {
         type: String,
     },
-    lang: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Language',
-        required: true,
-    },
+    // lang: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: 'Language',
+    //     required: true,
+    // },
 }, {timestamps: true}, {
     toJSON: {
         virtuals: true,

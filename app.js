@@ -6,8 +6,15 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require('cors')
+var CronJob = require('cron').CronJob;
 import mongooseIntl from 'mongoose-intl'
 //
+const fs = require('fs');
+
+const csv = require('csv-parser');
+import InventoryController from './controller/inventory'
+
+const schedule = require('node-schedule');
 var bodyParser = require('body-parser');
 // var multer = require('multer');
 // var upload = multer();
@@ -15,6 +22,7 @@ import blogRouter from './routes/blog';
 // import indexRouter from './routes/index';
 import modelRouter from './routes/model';
 import usersRouter from './routes/user';
+import inventoryRouter from './routes/inventory';
 import blogCategoryRouter from './routes/blog_category';
 import sliderRouter from './routes/slider';
 import roleRouter from './routes/role';
@@ -24,6 +32,27 @@ import languageRouter from './routes/language';
 import galleryRouter from './routes/gallery';
 
 var app = express();
+
+
+var job = new CronJob(
+    '* * 1 * * *',
+    function() {
+        console.log('start');
+      fs.createReadStream(path.join(__dirname, '../public/inventory/DealerCenter_Inventory.csv'))
+          .pipe(csv())
+          .on('data', (row) => {
+              console.log(row)
+              InventoryController.storeRow(row)
+          })
+          .on('end', () => {
+            console.log('CSV file successfully processed');
+          });
+    },
+    null,
+    true,
+    'America/Los_Angeles'
+);
+job.start();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -53,7 +82,7 @@ app.use(cors())
  */
 mongoose.set('useNewUrlParser', true)
 mongoose.set('useCreateIndex', true);
-mongoose.connect('mongodb://127.0.0.1:27017/DrAbedin', {useNewUrlParser: true});
+mongoose.connect('mongodb://127.0.0.1:27017/bumble-auto', {useNewUrlParser: true});
 
 /**
  * Global variable
@@ -69,6 +98,7 @@ app.use('/model', modelRouter);
 app.use('/role', roleRouter);
 app.use('/user', usersRouter);
 app.use('/blog', blogRouter);
+app.use('/inventory', inventoryRouter);
 app.use('/upload', uploadsRouter);
 app.use('/blog-category', blogCategoryRouter);
 app.use('/gallery', galleryRouter);
@@ -81,7 +111,6 @@ app.use('/language', languageRouter);
 app.use(function(req, res, next) {
   next(createError(404));
 });
-
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development

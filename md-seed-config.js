@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 import Users from './seeders/users.seeder';
 import Roles from './seeders/roles.seeder';
 
-const mongoURL = process.env.MONGO_URL || 'mongodb://localhost:27017/DrAbedin';
+const mongoURL = process.env.MONGO_URL || 'mongodb://localhost:27017/bumble-auto';
 
 /**
  * Seeders List
@@ -10,6 +10,7 @@ const mongoURL = process.env.MONGO_URL || 'mongodb://localhost:27017/DrAbedin';
  * @type {Object}
  */
 export const seedersList = {
+    Roles,
     Users
 };
 /**
@@ -17,7 +18,7 @@ export const seedersList = {
  * @return {Promise}
  */
 export const connect = async () =>
-  await mongoose.connect(mongoURL, { useNewUrlParser: true });
+    await mongoose.connect(mongoURL, { useNewUrlParser: true });
 /**
  * Drop/Clear the database implementation
  * @return {Promise}

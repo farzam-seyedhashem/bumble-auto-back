@@ -1,17 +1,7 @@
-import Head from 'next/head'
-import Appbar from '../components/appbar'
-import React from "react";
-import {makeStyles} from "@material-ui/core/styles";
+const schedule = require('node-schedule');
+schedule.scheduleJob('42 * * * *', function () {
+    console.log('The answer to life, the universe, and everything!');
+});
+exports.InventoryData = function () {
 
-const useStyles = makeStyles((theme) => ({
- 
-
-}));
-export default function Home(props) {
-    const classes = useStyles();
-    return (
-        <div>
-
-        </div>
-    )
 }
