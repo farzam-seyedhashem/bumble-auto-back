@@ -8,7 +8,7 @@ const router = express.Router();
 // router.get('/show/:url', news_controller.show);
 router.get('/', NewsController.index);
 // router.post('/',[checkToken,permit('blog')], NewsController.store);
-// router.get('/:slug', NewsController.show);
+router.get('/item/:slug', NewsController.show);
 router.get('/main_page_filter', NewsController.getMainPageFilter);
 // router.get('/filter/years', NewsController.getAllCarYears);
 // router.get('/filter/interior', NewsController.getAllCarInterior);
