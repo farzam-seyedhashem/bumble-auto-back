@@ -13,7 +13,6 @@
     <list default="true" id="51860ac8-8f9e-46b8-a0c1-b6ba8c268d4a" name="Default Changelist" comment="git ignore">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/inventory.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/inventory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist" beforeDir="false" afterPath="$PROJECT_DIR$/dist" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/.babelrc" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dist/.idea/workspace.xml" afterDir="false" />
@@ -66,7 +65,6 @@
       <change beforePath="$PROJECT_DIR$/dist/scheduler/InventoryData.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/scheduler/InventoryData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/seeders/roles.seeder.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/seeders/roles.seeder.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/seeders/users.seeder.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/seeders/users.seeder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/inventory.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/inventory.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -249,7 +247,7 @@
       <workItem from="1628951079812" duration="7434000" />
       <workItem from="1629089280780" duration="584000" />
       <workItem from="1629124406631" duration="5897000" />
-      <workItem from="1629286838409" duration="12850000" />
+      <workItem from="1629286838409" duration="13936000" />
     </task>
     <task id="LOCAL-00001" summary="git ignore">
       <created>1606683604055</created>
@@ -307,7 +305,21 @@
       <option name="project" value="LOCAL" />
       <updated>1629463256221</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="git ignore">
+      <created>1629469752980</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1629469752980</updated>
+    </task>
+    <task id="LOCAL-00010" summary="git ignore">
+      <created>1629469879374</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1629469879374</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

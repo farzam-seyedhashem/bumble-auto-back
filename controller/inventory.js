@@ -138,13 +138,14 @@ exports.getMainPageFilter = function (req, res) {
             inventories.map(item => {
                 years.push(item?.Year)
                 makes.push(item?.Make)
-                price.push(item?.Price)
+                price.push(parseFloat(item?.Price))
                 interior.push(item?.InteriorColor.replace(' ','').toLowerCase())
             })
             years = [...new Set(years)];
             makes = [...new Set(makes)];
-            price = [...new Set(price)];
-            price = [price[0], price[price.length-1]]
+            price = price.sort();
+console.log(price)
+            price = [price[price.length-1],price[0]]
             interior = [...new Set(interior)];
             const response = {years: years, makes: makes, price: price, interior: interior}
             console.log(response)
