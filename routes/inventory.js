@@ -9,6 +9,7 @@ const router = express.Router();
 router.get('/', NewsController.index);
 // router.post('/',[checkToken,permit('blog')], NewsController.store);
 router.get('/:slug', NewsController.show);
+router.get('/items/models', NewsController.getAllCarMakes);
 // router.put('/:id',[checkToken,permit('blog')], NewsController.update);
 // router.delete('/:id',[checkToken,permit('blog')], NewsController.destroy);
 

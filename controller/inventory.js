@@ -35,8 +35,64 @@ exports.index = function (req, res) {
 
 // Show the form for creating a new resource.
 exports.create = function (req, res) {
+
     res.send('NOT IMPLEMENTED: Book list');
 };
+
+// Get All Car Models.
+exports.getAllCarMakes = function (req, res) {
+    InventoryModel.find({},'Make', function(error, makes) {
+        // console.log(makes)
+        if (error){
+            res.send(error);
+        }else {
+            let Arr = []
+            makes.map(item =>
+                Arr.push(item?.Make)
+            )
+            Arr = [...new Set(Arr)];
+            res.send(Arr);
+        }
+
+    });
+    // InventoryModel
+    //     .find({})//grabs all subcategoris
+    //     .where('Model')//filter out the ones that don't have a category
+    //     .exec(function (err, data) {
+    //         if (err) {
+    //             console.log(err);
+    //             console.log('error returned');
+    //             res.send(500, { error: 'Failed insert' });
+    //         }
+    //
+    //         if (!data) {
+    //             res.send(403, { error: 'Authentication Failed' });
+    //         }
+    //
+    //         res.send(200, data);
+    //         console.log('success generate List');
+    //     });
+    // InventoryModel.find({}).select('Model').exec(function (err, count) {
+    //     console.log(count)
+    // })
+    // res.send('NOT IMPLEMENTED: Book list');
+};
+
+// // Get All Car Years.
+// exports.getAllCarmodels = function (req, res) {
+//     res.send('NOT IMPLEMENTED: Book list');
+// };
+//
+// // Get All Interior Color.
+// exports.getAllCarmodels = function (req, res) {
+//     res.send('NOT IMPLEMENTED: Book list');
+// };
+//
+// // Get All Price Period.
+// exports.getAllCarmodels = function (req, res) {
+//     res.send('NOT IMPLEMENTED: Book list');
+// };
+
 
 // Store a newly created resource in storage from CSV.
 exports.storeRow = function (row) {
