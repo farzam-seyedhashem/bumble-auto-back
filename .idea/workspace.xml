@@ -249,7 +249,7 @@
       <workItem from="1628951079812" duration="7434000" />
       <workItem from="1629089280780" duration="584000" />
       <workItem from="1629124406631" duration="5897000" />
-      <workItem from="1629286838409" duration="10625000" />
+      <workItem from="1629286838409" duration="12850000" />
     </task>
     <task id="LOCAL-00001" summary="git ignore">
       <created>1606683604055</created>
@@ -300,7 +300,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629394544330</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="git ignore">
+      <created>1629463256221</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1629463256221</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

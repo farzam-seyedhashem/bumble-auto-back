@@ -40,42 +40,134 @@ exports.create = function (req, res) {
 };
 
 // Get All Car Models.
-exports.getAllCarMakes = function (req, res) {
-    InventoryModel.find({},'Make', function(error, makes) {
+// exports.getAllCarMakes = function (req, res) {
+//     InventoryModel.find({}, 'Make', function (error, makes) {
+//         // console.log(makes)
+//         if (error) {
+//             res.send(error);
+//         } else {
+//             let Arr = []
+//             makes.map(item =>
+//                 Arr.push(item?.Make)
+//             )
+//             Arr = [...new Set(Arr)];
+//             res.send(Arr);
+//         }
+//
+//     });
+// };
+// // Get All Car Years.
+// exports.getAllCarYears = function (req, res) {
+//     InventoryModel.find({}, 'Year', function (error, makes) {
+//         // console.log(makes)
+//         if (error) {
+//             res.send(error);
+//         } else {
+//             let Arr = []
+//             makes.map(item =>
+//                 Arr.push(item?.Year)
+//             )
+//             Arr = [...new Set(Arr)];
+//             res.send(Arr);
+//         }
+//
+//     });
+// };
+// Get All Car Filter.
+exports.getAllFilter = function (req, res) {
+    console.log('filter')
+    // let response = {}
+    InventoryModel.find({}, function (error, inventories) {
         // console.log(makes)
-        if (error){
+        if (error) {
             res.send(error);
-        }else {
-            let Arr = []
-            makes.map(item =>
-                Arr.push(item?.Make)
-            )
-            Arr = [...new Set(Arr)];
-            res.send(Arr);
+        } else {
+            let years = []
+            let makes = []
+            let price = []
+            let interior = []
+
+            inventories.map(item => {
+                years.push(item?.Year)
+                makes.push(item?.Year)
+                price.push(item?.Price)
+                interior.push(item?.InteriorColor)
+            })
+            years = [...new Set(years)];
+            makes = [...new Set(makes)];
+            price = [...new Set(price)];
+            price = [price[0], price[price.length]]
+            interior = [...new Set(interior)];
+            const response = {years: years, makes: makes, price: price, interior: interior}
+            console.log(response)
+            res.send(response)
+
         }
 
     });
-    // InventoryModel
-    //     .find({})//grabs all subcategoris
-    //     .where('Model')//filter out the ones that don't have a category
-    //     .exec(function (err, data) {
-    //         if (err) {
-    //             console.log(err);
-    //             console.log('error returned');
-    //             res.send(500, { error: 'Failed insert' });
-    //         }
+    InventoryModel.find({}, 'Year', function (error, makes) {
+        // console.log(makes)
+        if (error) {
+            res.send(error);
+        } else {
+            let Arr = []
+            makes.map(item =>
+                Arr.push(item?.Year)
+            )
+            Arr = [...new Set(Arr)];
+            response.year = Arr
+            // res.send(Arr);
+        }
+
+    });
+};
+exports.getMainPageFilter = function (req, res) {
+    // console.log('filter')
+    // res.send('ffff')
+    // let response = {}
+    InventoryModel.find({}, function (error, inventories) {
+        console.log('makes')
+        if (error) {
+            res.send(error);
+        } else {
+            let years = []
+            let makes = []
+            let price = []
+            let interior = []
+
+            inventories.map(item => {
+                years.push(item?.Year)
+                makes.push(item?.Make)
+                price.push(item?.Price)
+                interior.push(item?.InteriorColor.replace(' ','').toLowerCase())
+            })
+            years = [...new Set(years)];
+            makes = [...new Set(makes)];
+            price = [...new Set(price)];
+            price = [price[0], price[price.length-1]]
+            interior = [...new Set(interior)];
+            const response = {years: years, makes: makes, price: price, interior: interior}
+            console.log(response)
+            res.send(response)
+
+        }
+
+    });
+    // InventoryModel.find({}, 'Year', function (error, makes) {
+    //     // console.log(makes)
+    //     if (error) {
+    //         res.send(error);
+    //     } else {
+    //         let Arr = []
+    //         makes.map(item =>
+    //             Arr.push(item?.Year)
+    //         )
+    //         Arr = [...new Set(Arr)];
+    //         response.year = Arr
+    //         // res.send(Arr);
+    //     }
     //
-    //         if (!data) {
-    //             res.send(403, { error: 'Authentication Failed' });
-    //         }
-    //
-    //         res.send(200, data);
-    //         console.log('success generate List');
-    //     });
-    // InventoryModel.find({}).select('Model').exec(function (err, count) {
-    //     console.log(count)
-    // })
-    // res.send('NOT IMPLEMENTED: Book list');
+    // });
 };
 
 // // Get All Car Years.
@@ -101,8 +193,7 @@ exports.storeRow = function (row) {
     InventoryModel.remove({}, function (err, updateObj) {
         if (err)
             console.log("err")
-        else
-        {
+        else {
             new InventoryModel(row).save(function (err) {
                 if (err) {
                     console.log(err)
