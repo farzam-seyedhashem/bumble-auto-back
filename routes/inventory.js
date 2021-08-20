@@ -10,6 +10,7 @@ router.get('/', NewsController.index);
 // router.post('/',[checkToken,permit('blog')], NewsController.store);
 router.get('/item/:slug', NewsController.show);
 router.get('/main_page_filter', NewsController.getMainPageFilter);
+router.get('/filters', NewsController.getAllFilter);
 // router.get('/filter/years', NewsController.getAllCarYears);
 // router.get('/filter/interior', NewsController.getAllCarInterior);
 // router.put('/:id',[checkToken,permit('blog')], NewsController.update);

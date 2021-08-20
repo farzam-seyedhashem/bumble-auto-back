@@ -66,6 +66,7 @@
       <change beforePath="$PROJECT_DIR$/dist/scheduler/InventoryData.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/scheduler/InventoryData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/seeders/roles.seeder.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/seeders/roles.seeder.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/seeders/users.seeder.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/seeders/users.seeder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/inventory.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/inventory.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,7 +249,7 @@
       <workItem from="1628951079812" duration="7434000" />
       <workItem from="1629089280780" duration="584000" />
       <workItem from="1629124406631" duration="5897000" />
-      <workItem from="1629286838409" duration="14636000" />
+      <workItem from="1629286838409" duration="16505000" />
     </task>
     <task id="LOCAL-00001" summary="git ignore">
       <created>1606683604055</created>
@@ -327,7 +328,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629472075016</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="git ignore">
+      <created>1629472643736</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1629472643737</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

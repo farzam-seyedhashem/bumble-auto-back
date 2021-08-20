@@ -16,7 +16,7 @@ exports.index = function (req, res) {
     InventoryModel.find().skip((resPerPage * page) - resPerPage)
         .limit(resPerPage).sort({'createdAt': -1}).exec(function (err, docs) {
         InventoryModel.count().exec(function (err, count) {
-            response.lastPageIndex = count / resPerPage
+            response.lastPageIndex = Math.ceil(count / resPerPage)
             if (count <= (resPerPage * page)) {
                 response.lastPage = true
             }
@@ -75,10 +75,8 @@ exports.create = function (req, res) {
 // };
 // Get All Car Filter.
 exports.getAllFilter = function (req, res) {
-    console.log('filter')
-    // let response = {}
     InventoryModel.find({}, function (error, inventories) {
-        // console.log(makes)
+        console.log('makes')
         if (error) {
             res.send(error);
         } else {
@@ -86,45 +84,36 @@ exports.getAllFilter = function (req, res) {
             let makes = []
             let price = []
             let interior = []
+            let exterior = []
+            let transmission = []
+            let trim = []
 
             inventories.map(item => {
                 years.push(item?.Year)
-                makes.push(item?.Year)
-                price.push(item?.Price)
-                interior.push(item?.InteriorColor)
+                makes.push(item?.Make)
+                transmission.push(item?.Transmission)
+                trim.push(item?.Trim)
+                price.push(parseFloat(item?.Price))
+                interior.push(item?.InteriorColor.replace(' ','').toLowerCase())
+                exterior.push(item?.ExteriorColor.replace(' ','').toLowerCase())
             })
             years = [...new Set(years)];
             makes = [...new Set(makes)];
-            price = [...new Set(price)];
-            price = [price[0], price[price.length]]
+            transmission = [...new Set(transmission)];
+            trim = [...new Set(trim)];
+            price = price.sort();
+            price = [price[price.length-1],price[0]]
             interior = [...new Set(interior)];
-            const response = {years: years, makes: makes, price: price, interior: interior}
+            exterior = [...new Set(exterior)];
+            const response = {years: years,trim:trim, transmission:transmission, makes: makes, price: price, interior: interior, exterior:exterior}
             console.log(response)
             res.send(response)
 
         }
 
     });
-    InventoryModel.find({}, 'Year', function (error, makes) {
-        // console.log(makes)
-        if (error) {
-            res.send(error);
-        } else {
-            let Arr = []
-            makes.map(item =>
-                Arr.push(item?.Year)
-            )
-            Arr = [...new Set(Arr)];
-            response.year = Arr
-            // res.send(Arr);
-        }
-
-    });
 };
 exports.getMainPageFilter = function (req, res) {
-    // console.log('filter')
-    // res.send('ffff')
-    // let response = {}
     InventoryModel.find({}, function (error, inventories) {
         console.log('makes')
         if (error) {
@@ -154,21 +143,6 @@ console.log(price)
         }
 
     });
-    // InventoryModel.find({}, 'Year', function (error, makes) {
-    //     // console.log(makes)
-    //     if (error) {
-    //         res.send(error);
-    //     } else {
-    //         let Arr = []
-    //         makes.map(item =>
-    //             Arr.push(item?.Year)
-    //         )
-    //         Arr = [...new Set(Arr)];
-    //         response.year = Arr
-    //         // res.send(Arr);
-    //     }
-    //
-    // });
 };
 
 // // Get All Car Years.
