@@ -94,18 +94,26 @@ exports.getAllFilter = function (req, res) {
                 transmission.push(item?.Transmission)
                 trim.push(item?.Trim)
                 price.push(parseFloat(item?.Price))
-                interior.push(item?.InteriorColor.replace(' ','').toLowerCase())
-                exterior.push(item?.ExteriorColor.replace(' ','').toLowerCase())
+                interior.push(item?.InteriorColor.replace(' ', '').toLowerCase())
+                exterior.push(item?.ExteriorColor.replace(' ', '').toLowerCase())
             })
             years = [...new Set(years)];
             makes = [...new Set(makes)];
             transmission = [...new Set(transmission)];
             trim = [...new Set(trim)];
             price = price.sort();
-            price = [price[price.length-1],price[0]]
+            price = [price[price.length - 1], price[0]]
             interior = [...new Set(interior)];
             exterior = [...new Set(exterior)];
-            const response = {years: years,trim:trim, transmission:transmission, makes: makes, price: price, interior: interior, exterior:exterior}
+            const response = {
+                years: years,
+                trim: trim,
+                transmission: transmission,
+                makes: makes,
+                price: price,
+                interior: interior,
+                exterior: exterior
+            }
             console.log(response)
             res.send(response)
 
@@ -128,13 +136,13 @@ exports.getMainPageFilter = function (req, res) {
                 years.push(item?.Year)
                 makes.push(item?.Make)
                 price.push(parseFloat(item?.Price))
-                interior.push(item?.InteriorColor.replace(' ','').toLowerCase())
+                interior.push(item?.InteriorColor.replace(' ', '').toLowerCase())
             })
             years = [...new Set(years)];
             makes = [...new Set(makes)];
             price = price.sort();
-console.log(price)
-            price = [price[price.length-1],price[0]]
+            console.log(price)
+            price = [price[price.length - 1], price[0]]
             interior = [...new Set(interior)];
             const response = {years: years, makes: makes, price: price, interior: interior}
             console.log(response)
@@ -166,7 +174,8 @@ exports.storeRow = function (row) {
     row.slug = row.VIN
     row.photoURLS = row.Photo_URLs.split(',')
     const price = parseFloat(row.Price)
-    row.finance = price * (.00625* (1.00625^72) / ((1.00625^72) - 1))
+
+    row.finance = price * (.000267 * (1.000267 ^ 72) / ((1.000267 ^ 72) - 1))
     InventoryModel.remove({}, function (err, updateObj) {
         if (err)
             console.log("err")
