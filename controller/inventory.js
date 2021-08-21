@@ -165,6 +165,8 @@ console.log(price)
 exports.storeRow = function (row) {
     row.slug = row.VIN
     row.photoURLS = row.Photo_URLs.split(',')
+    const price = parseFloat(row.Price)
+    row.finance = price * (.00625* (1.00625^72) / ((1.00625^72) - 1))
     InventoryModel.remove({}, function (err, updateObj) {
         if (err)
             console.log("err")
