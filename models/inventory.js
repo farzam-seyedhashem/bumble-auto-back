@@ -100,6 +100,9 @@ const BlogCategorySchema = new Schema({
     LatestPhotoModifiedDate: {
         type: String,
     },
+    finance: {
+        type: String,
+    },
 }, {timestamps: true}, {
     toJSON: {
         virtuals: true,
