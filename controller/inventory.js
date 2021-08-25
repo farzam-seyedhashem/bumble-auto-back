@@ -175,7 +175,7 @@ exports.storeRow = function (row) {
     row.photoURLS = row.Photo_URLs.split(',')
     const price = parseFloat(row.Price)
 
-    row.finance = price * (.000267 * (1.000267 ^ 72) / ((1.000267 ^ 72) - 1))
+    row.finance = Number((price * (.000267 * (1.000267 ^ 72) / ((1.000267 ^ 72) - 1))).toFixed(1))
     InventoryModel.remove({}, function (err, updateObj) {
         if (err)
             console.log("err")
