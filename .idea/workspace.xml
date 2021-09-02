@@ -12,6 +12,60 @@
   <component name="ChangeListManager">
     <list default="true" id="51860ac8-8f9e-46b8-a0c1-b6ba8c268d4a" name="Default Changelist" comment="git ignore">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist" beforeDir="false" afterPath="$PROJECT_DIR$/dist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/.babelrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dist/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/controller/blog_category_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/controller/blog_category_controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/controller/blog_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/controller/blog_controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/controller/gallery_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/controller/gallery_controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/controller/image_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/controller/image_controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/controller/inventory.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/controller/inventory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/controller/language_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/controller/language_controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/controller/models_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/controller/models_controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/controller/request_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/controller/request_controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/controller/role_controlller.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/controller/role_controlller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/controller/service_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/controller/service_controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/controller/slider_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/controller/slider_controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/controller/user_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/controller/user_controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/dist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/helper.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/helper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/md-seed-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/md-seed-config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/middleware/authentication_middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/middleware/authentication_middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/middleware/authorization_middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/middleware/authorization_middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/middleware/upload.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/middleware/upload.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/models/blog_category_model.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/models/blog_category_model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/models/blog_model.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/models/blog_model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/models/gallery_model.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/models/gallery_model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/models/image_model.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/models/image_model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/models/inventory.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/models/inventory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/models/language.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/models/language.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/models/request_model.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/models/request_model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/models/role_model.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/models/role_model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/models/service_model.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/models/service_model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/models/slider_model.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/models/slider_model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/models/user_model.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/models/user_model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/routes/blog.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/routes/blog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/routes/blog_category.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/routes/blog_category.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/routes/gallery.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/routes/gallery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/routes/inventory.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/routes/inventory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/routes/language.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/routes/language.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/routes/model.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/routes/model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/routes/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/routes/request.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/routes/role.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/routes/role.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/routes/service.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/routes/service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/routes/slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/routes/slider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/routes/upload.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/routes/upload.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/routes/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/routes/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/routes/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/scheduler/Index.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/scheduler/Index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/scheduler/InventoryData.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/scheduler/InventoryData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/seeders/roles.seeder.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/seeders/roles.seeder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/seeders/users.seeder.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/seeders/users.seeder.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,6 +259,9 @@
       <workItem from="1629286838409" duration="22360000" />
       <workItem from="1629725338966" duration="20000" />
       <workItem from="1629725485661" duration="32000" />
+      <workItem from="1629907495023" duration="6653000" />
+      <workItem from="1630502406473" duration="185000" />
+      <workItem from="1630583241913" duration="1450000" />
     </task>
     <task id="LOCAL-00001" summary="git ignore">
       <created>1606683604055</created>
@@ -318,7 +375,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629572443742</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="git ignore">
+      <created>1629907659681</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1629907659682</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
