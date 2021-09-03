@@ -34,25 +34,25 @@ import galleryRouter from './routes/gallery';
 var app = express();
 
 
-var job = new CronJob(
-    '* * 1 * * *',
-    function() {
-        console.log('start');
-      fs.createReadStream(path.join(__dirname, '../public/inventory/DealerCenter_Inventory.csv'))
-          .pipe(csv())
-          .on('data', (row) => {
-              console.log(row)
-              InventoryController.storeRow(row)
-          })
-          .on('end', () => {
-            console.log('CSV file successfully processed');
-          });
-    },
-    null,
-    true,
-    'America/Los_Angeles'
-);
-job.start();
+// var job = new CronJob(
+//     '* * 1 * * *',
+//     function() {
+//         console.log('start');
+//       fs.createReadStream(path.join(__dirname, '../public/inventory/DealerCenter_Inventory.csv'))
+//           .pipe(csv())
+//           .on('data', (row) => {
+//               console.log(row)
+//               InventoryController.storeRow(row)
+//           })
+//           .on('end', () => {
+//             console.log('CSV file successfully processed');
+//           });
+//     },
+//     null,
+//     true,
+//     'America/Los_Angeles'
+// );
+// job.start();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -66,6 +66,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../public')));
 
 
+
 /**
  * CORS Handeler
  */
@@ -74,7 +75,7 @@ const corsOptions = {
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
-app.use(cors())
+app.use(cors(corsOptions))
 
 
 /**

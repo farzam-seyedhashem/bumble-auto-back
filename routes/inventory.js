@@ -3,10 +3,9 @@ import NewsController from '../controller/inventory'
 import {checkToken} from '../middleware/authentication_middleware'
 import permit from '../middleware/authorization_middleware'
 const router = express.Router();
-
 /* GET home page. */
 // router.get('/show/:url', news_controller.show);
-router.get('/', NewsController.index);
+router.get('/getAll', NewsController.index);
 // router.post('/',[checkToken,permit('blog')], NewsController.store);
 router.get('/item/:slug', NewsController.show);
 router.get('/main_page_filter', NewsController.getMainPageFilter);

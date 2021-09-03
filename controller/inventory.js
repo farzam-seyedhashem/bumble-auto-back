@@ -12,10 +12,17 @@ exports.index = function (req, res) {
         "lastPage": false,
         "lastPageIndex": 1,
     }
+    let filterObject = {}
 
-    InventoryModel.find().skip((resPerPage * page) - resPerPage)
+    req.query.year ? filterObject.Year = req.query.year : ''
+    req.query.make ? filterObject.Make = req.query.make : ''
+    req.query.model ? filterObject.Model = req.query.model : ''
+    req.query.transmission ? filterObject.Transmission = req.query.transmission : ''
+
+
+    InventoryModel.find(filterObject).skip((resPerPage * page) - resPerPage)
         .limit(resPerPage).sort({'createdAt': -1}).exec(function (err, docs) {
-        InventoryModel.count().exec(function (err, count) {
+        InventoryModel.find(filterObject).count().exec(function (err, count) {
             response.lastPageIndex = Math.ceil(count / resPerPage)
             if (count <= (resPerPage * page)) {
                 response.lastPage = true
@@ -39,41 +46,6 @@ exports.create = function (req, res) {
     res.send('NOT IMPLEMENTED: Book list');
 };
 
-// Get All Car Models.
-// exports.getAllCarMakes = function (req, res) {
-//     InventoryModel.find({}, 'Make', function (error, makes) {
-//         // console.log(makes)
-//         if (error) {
-//             res.send(error);
-//         } else {
-//             let Arr = []
-//             makes.map(item =>
-//                 Arr.push(item?.Make)
-//             )
-//             Arr = [...new Set(Arr)];
-//             res.send(Arr);
-//         }
-//
-//     });
-// };
-// // Get All Car Years.
-// exports.getAllCarYears = function (req, res) {
-//     InventoryModel.find({}, 'Year', function (error, makes) {
-//         // console.log(makes)
-//         if (error) {
-//             res.send(error);
-//         } else {
-//             let Arr = []
-//             makes.map(item =>
-//                 Arr.push(item?.Year)
-//             )
-//             Arr = [...new Set(Arr)];
-//             res.send(Arr);
-//         }
-//
-//     });
-// };
-// Get All Car Filter.
 exports.getAllFilter = function (req, res) {
     InventoryModel.find({}, function (error, inventories) {
         console.log('makes')
@@ -152,21 +124,6 @@ exports.getMainPageFilter = function (req, res) {
 
     });
 };
-
-// // Get All Car Years.
-// exports.getAllCarmodels = function (req, res) {
-//     res.send('NOT IMPLEMENTED: Book list');
-// };
-//
-// // Get All Interior Color.
-// exports.getAllCarmodels = function (req, res) {
-//     res.send('NOT IMPLEMENTED: Book list');
-// };
-//
-// // Get All Price Period.
-// exports.getAllCarmodels = function (req, res) {
-//     res.send('NOT IMPLEMENTED: Book list');
-// };
 
 
 // Store a newly created resource in storage from CSV.
