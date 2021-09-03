@@ -18,6 +18,9 @@ exports.index = function (req, res) {
     req.query.make ? filterObject.Make = req.query.make : ''
     req.query.model ? filterObject.Model = req.query.model : ''
     req.query.transmission ? filterObject.Transmission = req.query.transmission : ''
+    req.query.interior ? filterObject.InteriorColor = req.query.interior : ''
+    req.query.exterior ? filterObject.ExteriorColor = req.query.exterior : ''
+    req.query.trim ? filterObject.Trim = req.query.trim : ''
 
 
     InventoryModel.find(filterObject).skip((resPerPage * page) - resPerPage)
@@ -70,6 +73,7 @@ exports.getAllFilter = function (req, res) {
                 exterior.push(item?.ExteriorColor.replace(' ', '').toLowerCase())
             })
             years = [...new Set(years)];
+
             makes = [...new Set(makes)];
             transmission = [...new Set(transmission)];
             trim = [...new Set(trim)];
@@ -78,7 +82,7 @@ exports.getAllFilter = function (req, res) {
             interior = [...new Set(interior)];
             exterior = [...new Set(exterior)];
             const response = {
-                years: years,
+                years: years.sort(),
                 trim: trim,
                 transmission: transmission,
                 makes: makes,
