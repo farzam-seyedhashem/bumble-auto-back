@@ -1,4 +1,7 @@
-import {InventoryData} from './InventoryData'
+"use strict";
+
+var _InventoryData = require("./InventoryData");
+
 module.exports = {
-    InventoryData
-}
+  InventoryData: _InventoryData.InventoryData
+};
